@@ -258,6 +258,113 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/21/centos7-0-配置negix踩小坑/" itemprop="url">
+                  centos7.0 配置negix踩小坑
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-21T17:30:04+08:00" content="2016-09-21">
+              2016-09-21
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/21/centos7-0-配置negix踩小坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/21/centos7-0-配置negix踩小坑/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h3><pre><code>配置negix配置文件，增加server，出现报错信息如下：
+nginx -t
+nginx: [emerg] &quot;server&quot; directive is not allowed here in /etc/nginx/nginx.conf:35
+nginx: configuration file /etc/nginx/nginx.conf test failed
+</code></pre><h3 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h3><pre><code>1、配置文件格式不对
+2、配置server信息去/etc/nginx/conf/*.conf
+</code></pre><h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><pre><code>server配置信息移到了/etc/nginx/conf/*.conf，不要在/etc/nginx/nginx.conf文件中配置
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/21/Xcode8上传ipa，商店活动里面没有APP/" itemprop="url">
                   Xcode8上传ipa，商店活动里面没有APP
                 </a>
@@ -872,7 +979,7 @@ allow_writeable_chroot=YES
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
