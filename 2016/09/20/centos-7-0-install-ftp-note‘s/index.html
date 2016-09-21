@@ -84,19 +84,34 @@
 
 
 
-<meta name="description" content="依赖环境服务环境：
-操作步骤结果验证">
+<meta name="description" content="依赖环境服务配置：
+CentOS：
+[root@iZ28orva0jwZ www]#  lsb_release -a
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID:    CentOS
+Description:    CentOS Linux release 7.0.1406 (Core)
+Release:    7.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos 7.0 install ftp note‘s">
 <meta property="og:url" content="http://yoursite.com/2016/09/20/centos-7-0-install-ftp-note‘s/index.html">
 <meta property="og:site_name" content="纸飞机的读书笔记">
-<meta property="og:description" content="依赖环境服务环境：
-操作步骤结果验证">
-<meta property="og:updated_time" content="2016-09-20T04:43:39.000Z">
+<meta property="og:description" content="依赖环境服务配置：
+CentOS：
+[root@iZ28orva0jwZ www]#  lsb_release -a
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID:    CentOS
+Description:    CentOS Linux release 7.0.1406 (Core)
+Release:    7.">
+<meta property="og:updated_time" content="2016-09-21T07:09:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos 7.0 install ftp note‘s">
-<meta name="twitter:description" content="依赖环境服务环境：
-操作步骤结果验证">
+<meta name="twitter:description" content="依赖环境服务配置：
+CentOS：
+[root@iZ28orva0jwZ www]#  lsb_release -a
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID:    CentOS
+Description:    CentOS Linux release 7.0.1406 (Core)
+Release:    7.">
 
 
 
@@ -306,8 +321,60 @@
       
 
       
-        <h2 id="依赖环境"><a href="#依赖环境" class="headerlink" title="依赖环境"></a>依赖环境</h2><pre><code>服务环境：
-</code></pre><h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h2 id="结果验证"><a href="#结果验证" class="headerlink" title="结果验证"></a>结果验证</h2>
+        <h2 id="依赖环境"><a href="#依赖环境" class="headerlink" title="依赖环境"></a>依赖环境</h2><h3 id="服务配置："><a href="#服务配置：" class="headerlink" title="服务配置："></a>服务配置：</h3><ul>
+<li><p>CentOS：</p>
+<pre><code>[root@iZ28orva0jwZ www]#  lsb_release -a
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID:    CentOS
+Description:    CentOS Linux release 7.0.1406 (Core)
+Release:    7.0.1406
+Codename:    Core
+</code></pre></li>
+<li><p>yum:</p>
+<pre><code>[root@iZ28orva0jwZ www]# yum --version
+3.4.3
+ 已安装： rpm-4.11.1-16.el7.x86_64 在 2014-11-21 10:22
+  构建    ：CentOS BuildSystem &lt;http://bugs.centos.org&gt;         在 2014-06-09 18:59
+ 已提交：Panu Matilainen &lt;pmatilai@redhat.com&gt; ，共         2014-03-24
+
+  已安装： yum-3.4.3-118.el7.centos.noarch 在 2014-11-21 10:23
+  构建    ：CentOS BuildSystem &lt;http://bugs.centos.org&gt;         在 2014-06-27 11:07
+  已提交：Karanbir Singh &lt;kbsingh@centos.org&gt; ，共 2014-06-27
+</code></pre></li>
+</ul>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>step1:<br><code><br>    yum install vsftpd<br></code></p>
+<p>step2:<br><code><br>vim /etc/vsftpd/vsftpd.conf<br></code></p>
+<p>配置文件：</p>
+<pre><code>anonymous_enable=NO
+#anonymous_enable=YES
+#不允许匿名登陆
+
+chroot_local_user=YES
+#是否将所有用户限制在主目录,YES为启用 NO禁用.(该项默认值是NO,即在安装vsftpd后不做配置的话，ftp用户是可以向上切换到要目录之外的)
+
+chroot_list_enable=YES
+#是否启动限制用户的名单 YES为启用  NO禁用(包括注释掉也为禁用)
+
+chroot_list_file=/etc/vsftpd/chroot_list
+#是否限制在主目录下的用户名单，至于是限制名单还是排除名单，这取决于chroot_local_user的值，我们可以这样记忆： chroot_local_user总是一个全局性的设定，其为YES时，全部用户被锁定于主目录，其为NO时，全部用户不被锁定于主目录。那么我们势必需要在全局设定下能做出一些“微调”，即，我们总是需要一种“例外机制&quot;，所以当chroot_list_enable=YES时，表示我们“需要例外”。而”例外“的含义总是有一个上下文的，即，当”全部用户被锁定于主目录“时（即chroot_local_user=YES），&quot;例外&quot;就是：不被锁定的用户是哪些；当&quot;全部用户不被锁定于主目录&quot;时（即chroot_local_user=NO），&quot;例外&quot;“就是：要被锁定的用户是哪些。这样解释和记忆两者之间的关系就很清晰了！
+
+allow_writeable_chroot=YES
+加上这行解决了无法登陆的问题,这里有坑
+</code></pre><p>step3:<br><code><br>    service vsftpd start<br>    ｜ service vsftpd restart<br></code><br>启动服务</p>
+<p>step4:</p>
+<p><code><br>    vim /etc/sysconfig/iptables<br></code></p>
+<p><code><br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT<br></code><br>防火钱配置21端口，并重启防火墙</p>
+<p>step5:</p>
+<p><code><br>    useradd -d /为了防止/直接粘贴/所以写成汉字/自己配置存储路径 -s /sbin/nologin ftpadmin<br></code></p>
+<p>添加ftp账户</p>
+<p>step6:</p>
+<p><code><br>    passwd ftpadmin<br></code></p>
+<p>修改ftp账户 密码</p>
+<p>step6:</p>
+<p><code><br>    chown -R ftpadmin.ftpadmin /path/you/set<br></code></p>
+<p>修改ftp账户 访问权限</p>
+<h2 id="结果验证"><a href="#结果验证" class="headerlink" title="结果验证"></a>结果验证</h2><pre><code>ftp client 链接 
+</code></pre>
       
     </div>
 
@@ -442,7 +509,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖环境"><span class="nav-number">1.</span> <span class="nav-text">依赖环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作步骤"><span class="nav-number">2.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果验证"><span class="nav-number">3.</span> <span class="nav-text">结果验证</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖环境"><span class="nav-number">1.</span> <span class="nav-text">依赖环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务配置："><span class="nav-number">1.1.</span> <span class="nav-text">服务配置：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作步骤"><span class="nav-number">2.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果验证"><span class="nav-number">3.</span> <span class="nav-text">结果验证</span></a></li></ol></div>
             
           </div>
         </section>
