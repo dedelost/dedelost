@@ -330,9 +330,11 @@ Codename:    Core
   已提交：Karanbir Singh &lt;kbsingh@centos.org&gt; ，共 2014-06-27
 </code></pre></li>
 </ul>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>step1:<br><code><br>    yum install vsftpd<br></code></p>
-<p>step2:<br><code><br>vim /etc/vsftpd/vsftpd.conf<br></code></p>
-<p>配置文件：</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>step1:</p>
+<pre><code>yum install vsftpd
+</code></pre><p>step2:</p>
+<pre><code>vim /etc/vsftpd/vsftpd.conf
+</code></pre><p>配置文件：</p>
 <pre><code>anonymous_enable=NO
 #anonymous_enable=YES
 #不允许匿名登陆
@@ -348,19 +350,23 @@ chroot_list_file=/etc/vsftpd/chroot_list
 
 allow_writeable_chroot=YES
 加上这行解决了无法登陆的问题,这里有坑
-</code></pre><p>step3:<br><code><br>    service vsftpd start<br>    ｜ service vsftpd restart<br></code><br>启动服务</p>
+</code></pre><p>step3:</p>
+<pre><code>service vsftpd start  ｜ service vsftpd restart
+</code></pre><p>启动服务</p>
 <p>step4:</p>
-<p><code><br>    vim /etc/sysconfig/iptables<br></code></p>
-<p><code><br>-A INPUT -m state –state NEW -m tcp -p tcp –dport 21 -j ACCEPT<br></code><br>防火钱配置21端口，并重启防火墙</p>
+<pre><code>vim /etc/sysconfig/iptables
+
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 21 -j ACCEPT
+</code></pre><p>防火钱配置21端口，并重启防火墙</p>
 <p>step5:</p>
-<p><code><br>    useradd -d /为了防止/直接粘贴/所以写成汉字/自己配置存储路径 -s /sbin/nologin ftpadmin<br></code></p>
-<p>添加ftp账户</p>
+<pre><code>useradd -d /为了防止/直接粘贴/所以写成汉字/自己配置存储路径 -s /sbin/nologin ftpadmin
+</code></pre><p>添加ftp账户</p>
 <p>step6:</p>
-<p><code><br>    passwd ftpadmin<br></code></p>
-<p>修改ftp账户 密码</p>
+<pre><code>passwd ftpadmin
+</code></pre><p>修改ftp账户 密码</p>
 <p>step6:</p>
-<p><code><br>    chown -R ftpadmin.ftpadmin /path/you/set<br></code></p>
-<p>修改ftp账户 访问权限</p>
+<pre><code>chown -R ftpadmin.ftpadmin /path/you/set
+</code></pre><p>修改ftp账户 访问权限</p>
 <h2 id="结果验证"><a href="#结果验证" class="headerlink" title="结果验证"></a>结果验证</h2><pre><code>ftp client 链接 
 </code></pre>
           
