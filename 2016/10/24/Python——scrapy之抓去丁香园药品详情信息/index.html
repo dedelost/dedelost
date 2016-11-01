@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="明天写">
+<meta name="description" content="安装前准备主页献上scrapy安装要求：Python 2.7 or Python 3.3+Works on Linux, Windows, Mac OSX, BSD也就是说Mac OSX开发，Linux部署是可以的了。语言版本拥抱3.x版本。
+安装$ pip install scrapy
+踩坑：由于开发环境使用的是PyCharm,安装的话。搜索安装添加 ok。详细不知道的同学我会专门写一个教程，原">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python——scrapy之抓去丁香园药品详情信息">
 <meta property="og:url" content="http://yoursite.com/2016/10/24/Python——scrapy之抓去丁香园药品详情信息/index.html">
 <meta property="og:site_name" content="纸飞机的读书笔记">
-<meta property="og:description" content="明天写">
-<meta property="og:updated_time" content="2016-10-24T10:15:48.000Z">
+<meta property="og:description" content="安装前准备主页献上scrapy安装要求：Python 2.7 or Python 3.3+Works on Linux, Windows, Mac OSX, BSD也就是说Mac OSX开发，Linux部署是可以的了。语言版本拥抱3.x版本。
+安装$ pip install scrapy
+踩坑：由于开发环境使用的是PyCharm,安装的话。搜索安装添加 ok。详细不知道的同学我会专门写一个教程，原">
+<meta property="og:updated_time" content="2016-10-25T07:22:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python——scrapy之抓去丁香园药品详情信息">
-<meta name="twitter:description" content="明天写">
+<meta name="twitter:description" content="安装前准备主页献上scrapy安装要求：Python 2.7 or Python 3.3+Works on Linux, Windows, Mac OSX, BSD也就是说Mac OSX开发，Linux部署是可以的了。语言版本拥抱3.x版本。
+安装$ pip install scrapy
+踩坑：由于开发环境使用的是PyCharm,安装的话。搜索安装添加 ok。详细不知道的同学我会专门写一个教程，原">
 
 
 
@@ -303,7 +309,23 @@
       
 
       
-        <p>明天写</p>
+        <h2 id="安装前准备"><a href="#安装前准备" class="headerlink" title="安装前准备"></a>安装前准备</h2><p>主页献上<a href="https://github.com/scrapy/scrapy" target="_blank" rel="external">scrapy</a><br>安装要求：<br>Python 2.7 or Python 3.3+<br>Works on Linux, Windows, Mac OSX, BSD<br>也就是说Mac OSX开发，Linux部署是可以的了。语言版本拥抱3.x版本。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>$ pip install scrapy</p>
+<p>踩坑：由于开发环境使用的是PyCharm,安装的话。搜索安装添加 ok。详细不知道的同学我会专门写一个教程，原因是我百度没找见，原谅我不用google，原因是虽然写过google的很多web产品，然而还是没找到特别突出的点。<a href="">PyCharm第三方包管理和部署</a>还有很多人写Python不喜欢用IDE。</p>
+<p>言归正传：想用3.X系列，但是mac 默认2.x系列，软连接啥的没发做，root权限不够。。。哈哈哈很奇怪吧！算了委屈一下，现在2.x上折腾下，成功了再逼逼其他方式。</p>
+<p>这时候开发工具变成了  SubLime + 终端了。哈哈哈。。</p>
+<p>环境好了，mac安装的时候有时候会爆出一个权限问题的错误，这个时候执行这个</p>
+<pre><code>pip install --ignore-installed six
+</code></pre><p><a href="http://stackoverflow.com/questions/31900008/oserror-errno-1-operation-not-permitted-when-installing-scrapy-in-osx-10-11" target="_blank" rel="external">可以解决这个问题。</a></p>
+<h2 id="开动"><a href="#开动" class="headerlink" title="开动"></a>开动</h2><p>安装完成之后先走一个demo。</p>
+<pre><code>scrapy startproject scrapy_DXY
+scrapy crawl dmoz
+</code></pre><p>关键两部，也就拉下来了URL对应的两个页面，并写到本地，接下来选择器过滤。比较繁琐了。。。<a href="https://scrapy-chs.readthedocs.io/zh_CN/0.24/index.html" target="_blank" rel="external">来个官方教程</a></p>
+<blockquote>
+<h3 id="scrapy工具"><a href="#scrapy工具" class="headerlink" title="scrapy工具"></a>scrapy工具</h3></blockquote>
+<pre><code>scrapy startproject myproject // 创建项目
+scrapy genspider mydomain mydomain.com // 创建spider
+</code></pre><p><a href="https://scrapy-chs.readthedocs.io/zh_CN/0.24/topics/commands.html#topics-commands-ref" target="_blank" rel="external">详细解释</a></p>
 
       
     </div>
@@ -411,7 +433,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -443,7 +465,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装前准备"><span class="nav-number">1.</span> <span class="nav-text">安装前准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开动"><span class="nav-number">3.</span> <span class="nav-text">开动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scrapy工具"><span class="nav-number">3.1.</span> <span class="nav-text">scrapy工具</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
