@@ -258,6 +258,127 @@
             
               
                 
+                <a class="post-title-link" href="/2016/12/14/python自动化运维观后感/" itemprop="url">
+                  python自动化运维观后感
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-14T10:30:36+08:00" content="2016-12-14">
+              2016-12-14
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/14/python自动化运维观后感/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/14/python自动化运维观后感/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="全书讲了各种第三方库"><a href="#全书讲了各种第三方库" class="headerlink" title="全书讲了各种第三方库"></a>全书讲了各种第三方库</h1><h2 id="psutil"><a href="#psutil" class="headerlink" title="psutil"></a><a href="https://pypi.python.org/pypi/psutil" target="_blank" rel="external">psutil</a></h2><p>计算机信息模块</p>
+<h2 id="IPy"><a href="#IPy" class="headerlink" title="IPy"></a><a href="https://pypi.python.org/pypi/IPy" target="_blank" rel="external">IPy</a></h2><p>IP地址处理模块</p>
+<h2 id="dnspython"><a href="#dnspython" class="headerlink" title="dnspython"></a><a href="http://www.dnspython.org" target="_blank" rel="external">dnspython</a></h2><p>DNS处理模块</p>
+<pre><code>A记录：A = dns.resolver.query(&apos;域名&apos;,&apos;A&apos;)
+MX记录：MX = dns.resolver.query(&apos;域名&apos;,&apos;MX&apos;)
+NS记录：NS = dns.resolver.query(&apos;一级域名&apos;,&apos;NS&apos;)
+CNAME记录：CNAME = dns.resolver.query(&apos;域名&apos;,&apos;CNAME&apos;)
+</code></pre><p><a href="http://bbs.51cto.com/thread-909189-1.html" target="_blank" rel="external">各种资源记录介绍</a>  实践案例：轮训监控服务器状态</p>
+<h2 id="difflib"><a href="#difflib" class="headerlink" title="difflib"></a><a href="https://docs.python.org/2/library/difflib.html" target="_blank" rel="external">difflib</a></h2><p>文件/目录 差异对比</p>
+<h2 id="smtplib"><a href="#smtplib" class="headerlink" title="smtplib"></a><a href="https://docs.python.org/2/library/smtplib.html" target="_blank" rel="external">smtplib</a></h2><p>电子邮件</p>
+<h2 id="pycurl"><a href="#pycurl" class="headerlink" title="pycurl"></a><a href="https://pypi.python.org/pypi/pycurl/" target="_blank" rel="external">pycurl</a></h2><p>curl – py版本</p>
+<h2 id="XlsxWriter"><a href="#XlsxWriter" class="headerlink" title="XlsxWriter"></a><a href="https://xlsxwriter.readthedocs.io" target="_blank" rel="external">XlsxWriter</a></h2><p>Excel 操作模块</p>
+<h2 id="rrdtool"><a href="#rrdtool" class="headerlink" title="rrdtool"></a><a href="https://pypi.python.org/pypi/python-rrdtool/" target="_blank" rel="external">rrdtool</a></h2><p>绘图引擎</p>
+<h2 id="pyClamd"><a href="#pyClamd" class="headerlink" title="pyClamd"></a><a href="https://pypi.python.org/pypi/pyClamd/" target="_blank" rel="external">pyClamd</a></h2><p>杀毒软件</p>
+<h2 id="python-nmap"><a href="#python-nmap" class="headerlink" title="python-nmap"></a><a href="http://xael.org/pages/python-nmap-en.html" target="_blank" rel="external">python-nmap</a></h2><p>端口扫描</p>
+<h2 id="Pexpect"><a href="#Pexpect" class="headerlink" title="Pexpect"></a><a href="http://pexpect.readthedocs.io/en/stable/" target="_blank" rel="external">Pexpect</a></h2><h2 id="Paramiko"><a href="#Paramiko" class="headerlink" title="Paramiko"></a><a href="http://www.paramiko.org" target="_blank" rel="external">Paramiko</a></h2><h2 id="Fabric"><a href="#Fabric" class="headerlink" title="Fabric"></a><a href="http://www.fabfile.org" target="_blank" rel="external">Fabric</a></h2><p>交互式任务通信</p>
+<h2 id="ansible"><a href="#ansible" class="headerlink" title="ansible"></a><a href="http://docs.ansible.com" target="_blank" rel="external">ansible</a></h2><h2 id="saltstack"><a href="#saltstack" class="headerlink" title="saltstack"></a><a href="https://docs.saltstack.com/en/latest/" target="_blank" rel="external">saltstack</a></h2><p>集中式管理平台</p>
+<h2 id="Func"><a href="#Func" class="headerlink" title="Func"></a><a href="https://fedorahosted.org/func/" target="_blank" rel="external">Func</a></h2><p>统一网络控制</p>
+<h1 id="全书推广了自己的websever-框架"><a href="#全书推广了自己的websever-框架" class="headerlink" title="全书推广了自己的websever 框架"></a>全书推广了自己的websever 框架</h1><p>不写免得误导</p>
+<h1 id="全书写了一个案例"><a href="#全书写了一个案例" class="headerlink" title="全书写了一个案例"></a>全书写了一个案例</h1><p>最后</p>
+<h1 id="观后感"><a href="#观后感" class="headerlink" title="观后感"></a>观后感</h1><p>讲的啥玩意，这不是工作流水账嘛？</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/28/python学习笔记/" itemprop="url">
                   python学习笔记
                 </a>
@@ -343,7 +464,87 @@
 dir(exceptions)
 </code></pre></li>
 </ul>
+<h1 id="内建函数详解"><a href="#内建函数详解" class="headerlink" title="内建函数详解"></a>内建函数详解</h1><h3 id="bisect"><a href="#bisect" class="headerlink" title="bisect"></a>bisect</h3><p>操作要求列表是已经排序过后的列表</p>
+<pre><code>import bisect
+print dir(bisect)
+</code></pre><p>[‘<strong>builtins</strong>‘, ‘<strong>doc</strong>‘, ‘<strong>file</strong>‘, ‘<strong>name</strong>‘, ‘<strong>package</strong>‘, ‘bisect’, ‘bisect_left’, ‘bisect_right’, ‘insort’, ‘insort_left’, ‘insort_right’]</p>
+<ul>
+<li><p>bisect   </p>
+<pre><code>bisect.bisect(data,7)
+查找列表数值位置，并返回位置。不存在超过最大值则返回，len（列表），小于最小值则返回0
+</code></pre></li>
+<li><p>insort </p>
+<pre><code>bisect.insort(data,7)
+为排序后的列表插入元素，按照排序自动插入
+</code></pre></li>
+<li>insort_left</li>
+<li>insort_right</li>
+<li>bisect_left</li>
+<li><p>bisect_right    </p>
+<pre><code>对应left以及right 方法，只是优先插入,和优先返回坐标值！
+</code></pre></li>
+</ul>
+<h3 id="split"><a href="#split" class="headerlink" title="split"></a>split</h3><p>通过指定分隔符对字符串进行切片，如果参数num 有指定值，则仅分隔 num 个子字符串</p>
+<pre><code>def split(self, sep=None, maxsplit=None):
+    分割标识符  分成？组   得到列表[n]访问其中指定游标元素
+EX:
+s.split(&apos; &apos;,2)[1]
+</code></pre><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>可以叫爸爸的函数、</p>
+<ul>
+<li><p>批量计算：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def add(x):<br>  …     return x+1<br>  …<br>li = [1,2,3]<br>map(add,li)<br>  [2, 3, 4]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><p>批量并行计算:</p>
+<pre><code>&gt;&gt;&gt; def add(a,b):
+...     return a*100+b*10
+...
+&gt;&gt;&gt; li1=[1,2]
+&gt;&gt;&gt; li2=[3,4]
+&gt;&gt;&gt; map(add,li1,li2)
+[130, 240]
+</code></pre></li>
+<li><p>第一参数为None:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>map(None,li1,li2)<br> [(1, 3), (2, 4)]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><pre><code>递归运算 依次叠加
+</code></pre><h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><ul>
+<li><p>创建生成器</p>
+<pre><code>nested = [[1,2],[3,4],[5]]
+</code></pre></li>
+</ul>
+<h1 id="文件和流"><a href="#文件和流" class="headerlink" title="文件和流"></a>文件和流</h1><pre><code>open(r&apos;name&apos;,&apos;wb&apos;,0/1) 
+第三个参数：0 无缓冲，直接操作disk。 
+1 有缓冲，使用flush或者close方法才将内存中缓冲的信息写入disk
+</code></pre><h3 id="文件模式"><a href="#文件模式" class="headerlink" title="文件模式"></a>文件模式</h3><ul>
+<li>r 读</li>
+<li>w 写</li>
+<li>a 追加</li>
+<li>b 二进制</li>
+<li><ul>
+<li>读／写</li>
+</ul>
+</li>
+</ul>
+<h3 id="读写"><a href="#读写" class="headerlink" title="读写"></a>读写</h3><pre><code>read()
+write()
+</code></pre><h3 id="文件关闭"><a href="#文件关闭" class="headerlink" title="文件关闭"></a>文件关闭</h3><pre><code>with open() as some:
+    print some
 
+即使由于异常造成的程序崩溃，也能保证文件被关闭而不用显式调用close方法
+</code></pre>
           
         
       
@@ -1366,133 +1567,6 @@ If-None-Match:
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/23/Ubuntu-14-04-4-updata-python2/" itemprop="url">
-                  Ubuntu 14.04.4 updata python2
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-23T11:24:57+08:00" content="2016-09-23">
-              2016-09-23
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/23/Ubuntu-14-04-4-updata-python2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/23/Ubuntu-14-04-4-updata-python2/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p>python</p>
-<pre><code>Python 2.7.6 (default, Jun 22 2015, 17:58:13)
-[GCC 4.8.2] on linux2
-</code></pre></li>
-<li><p>sudo apt-get install python3</p>
-</li>
-<li>cd usr/local/lib/</li>
-<li><p>ls</p>
-<pre><code>root@iZ28orva0jwZ:/usr/local/lib# ls
-python2.7  python3.4
-
-此时会出现两个版本信息 系统自带2.7版本以及 
-sudo apt-get install python3 命令安装的3.4版本。
-此处需要手动验证系统安装的3.x具体版本号
-</code></pre></li>
-<li>cd /usr/bin</li>
-<li>sudo rm -rf python</li>
-<li><p>sudo ln -s /usr/bin/python3.4 /usr/bin/python</p>
-<p>  此处/usr/bin/python3.4 具体文件路径需要在之前安装后手动验证具体路径</p>
-<h3 id="验证结果"><a href="#验证结果" class="headerlink" title="验证结果"></a>验证结果</h3><pre><code>root@iZ28orva0jwZ:/usr/bin# python
-Python 3.4.3 (default, Oct 14 2015, 20:28:29)
-[GCC 4.8.4] on linux
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt;
-</code></pre></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1538,7 +1612,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

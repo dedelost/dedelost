@@ -108,7 +108,7 @@ Unicode u’’
 长度len()   最大值max()   最小值min()
 列表操作  =  del  
 列表方法 append count extend index inser">
-<meta property="og:updated_time" content="2016-10-31T06:04:11.000Z">
+<meta property="og:updated_time" content="2016-11-03T01:38:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python学习笔记">
 <meta name="twitter:description" content="长字符串 ’‘’    ‘’‘
@@ -364,7 +364,87 @@ Unicode u’’
 dir(exceptions)
 </code></pre></li>
 </ul>
+<h1 id="内建函数详解"><a href="#内建函数详解" class="headerlink" title="内建函数详解"></a>内建函数详解</h1><h3 id="bisect"><a href="#bisect" class="headerlink" title="bisect"></a>bisect</h3><p>操作要求列表是已经排序过后的列表</p>
+<pre><code>import bisect
+print dir(bisect)
+</code></pre><p>[‘<strong>builtins</strong>‘, ‘<strong>doc</strong>‘, ‘<strong>file</strong>‘, ‘<strong>name</strong>‘, ‘<strong>package</strong>‘, ‘bisect’, ‘bisect_left’, ‘bisect_right’, ‘insort’, ‘insort_left’, ‘insort_right’]</p>
+<ul>
+<li><p>bisect   </p>
+<pre><code>bisect.bisect(data,7)
+查找列表数值位置，并返回位置。不存在超过最大值则返回，len（列表），小于最小值则返回0
+</code></pre></li>
+<li><p>insort </p>
+<pre><code>bisect.insort(data,7)
+为排序后的列表插入元素，按照排序自动插入
+</code></pre></li>
+<li>insort_left</li>
+<li>insort_right</li>
+<li>bisect_left</li>
+<li><p>bisect_right    </p>
+<pre><code>对应left以及right 方法，只是优先插入,和优先返回坐标值！
+</code></pre></li>
+</ul>
+<h3 id="split"><a href="#split" class="headerlink" title="split"></a>split</h3><p>通过指定分隔符对字符串进行切片，如果参数num 有指定值，则仅分隔 num 个子字符串</p>
+<pre><code>def split(self, sep=None, maxsplit=None):
+    分割标识符  分成？组   得到列表[n]访问其中指定游标元素
+EX:
+s.split(&apos; &apos;,2)[1]
+</code></pre><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>可以叫爸爸的函数、</p>
+<ul>
+<li><p>批量计算：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>def add(x):<br>  …     return x+1<br>  …<br>li = [1,2,3]<br>map(add,li)<br>  [2, 3, 4]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><p>批量并行计算:</p>
+<pre><code>&gt;&gt;&gt; def add(a,b):
+...     return a*100+b*10
+...
+&gt;&gt;&gt; li1=[1,2]
+&gt;&gt;&gt; li2=[3,4]
+&gt;&gt;&gt; map(add,li1,li2)
+[130, 240]
+</code></pre></li>
+<li><p>第一参数为None:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>map(None,li1,li2)<br> [(1, 3), (2, 4)]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><pre><code>递归运算 依次叠加
+</code></pre><h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><ul>
+<li><p>创建生成器</p>
+<pre><code>nested = [[1,2],[3,4],[5]]
+</code></pre></li>
+</ul>
+<h1 id="文件和流"><a href="#文件和流" class="headerlink" title="文件和流"></a>文件和流</h1><pre><code>open(r&apos;name&apos;,&apos;wb&apos;,0/1) 
+第三个参数：0 无缓冲，直接操作disk。 
+1 有缓冲，使用flush或者close方法才将内存中缓冲的信息写入disk
+</code></pre><h3 id="文件模式"><a href="#文件模式" class="headerlink" title="文件模式"></a>文件模式</h3><ul>
+<li>r 读</li>
+<li>w 写</li>
+<li>a 追加</li>
+<li>b 二进制</li>
+<li><ul>
+<li>读／写</li>
+</ul>
+</li>
+</ul>
+<h3 id="读写"><a href="#读写" class="headerlink" title="读写"></a>读写</h3><pre><code>read()
+write()
+</code></pre><h3 id="文件关闭"><a href="#文件关闭" class="headerlink" title="文件关闭"></a>文件关闭</h3><pre><code>with open() as some:
+    print some
 
+即使由于异常造成的程序崩溃，也能保证文件被关闭而不用显式调用close方法
+</code></pre>
       
     </div>
 
@@ -396,6 +476,10 @@ dir(exceptions)
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/14/python自动化运维观后感/" rel="prev" title="python自动化运维观后感">
+                python自动化运维观后感 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -467,7 +551,7 @@ dir(exceptions)
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -499,7 +583,7 @@ dir(exceptions)
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内建函数详解"><span class="nav-number">1.</span> <span class="nav-text">内建函数详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bisect"><span class="nav-number">1.0.1.</span> <span class="nav-text">bisect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split"><span class="nav-number">1.0.2.</span> <span class="nav-text">split</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">1.0.3.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">1.0.4.</span> <span class="nav-text">reduce</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成器"><span class="nav-number">2.</span> <span class="nav-text">生成器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件和流"><span class="nav-number">3.</span> <span class="nav-text">文件和流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件模式"><span class="nav-number">3.0.1.</span> <span class="nav-text">文件模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读写"><span class="nav-number">3.0.2.</span> <span class="nav-text">读写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件关闭"><span class="nav-number">3.0.3.</span> <span class="nav-text">文件关闭</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
